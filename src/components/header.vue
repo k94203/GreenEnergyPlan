@@ -1,51 +1,64 @@
 <template>
   <header class="header">
     <div class="content">
-      <a href="https://www.stust.edu.tw/" id="logo">
-        <img src="@/assets/LOGO.png" alt="LOGO">
+      <a :href="'https://www.stust.edu.tw/'" target="_blank">
+        <v-img id="logo" cover :src="logoSrcRef"></v-img>
       </a>
-      <button class="button">會員註冊</button>
-      <button class="button">登入</button>
+      <v-btn class="button">會員註冊</v-btn>
+      <v-btn class="button">登入</v-btn>
     </div>
   </header>
+
 </template>
+
+
+<script setup>
+import { ref } from 'vue';
+
+// 使用 import 引入圖片
+import logoSrc from '@/assets/LOGO.png';
+
+const logoSrcRef = ref(logoSrc);
+
+</script>
 
 <style scoped>
 .header {
-  color: white; /* 文字顏色 */
-  padding: 1rem 0; /* 上下內邊距 */
-  display: flex; /* 使用 Flexbox */
-  justify-content: center; /* 水平居中 */
-  align-items: center; /* 垂直居中 */
-  width: 100%; /* 滿版寬度 */
-  box-sizing: border-box; /* 包含內邊距 */
+  color: white; 
+  padding: 1rem 0; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
-/* Header 內部內容 */
 .content {
-  display: flex; /* 使用 Flexbox */
-  justify-content: space-between; /* 左右兩側內容間距 */
-  align-items: center; /* 垂直居中 */
-  width: 80%; /* 設置固定寬度（例如 80%） */
-  max-width: 1200px; /* 最大寬度 */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 80%; 
+  max-width: 1200px; 
 }
 
-/* LOGO 圖片樣式 */
-#logo img {
-  max-height: 100px; /* 限制 LOGO 高度 */
-  width:1000px; /* 自動調整寬度 */
+
+#logo {
+  max-height: 100px; 
+  width:1000px; 
 }
 
-/* 按鈕樣式 */
+
 .button {
-  width: 110px;
-  height: 30px;
-  font-size: 16px;
-  background-color: blue;
+  width: 140px;
+  height: 45px;
+  font-size: 25px;
+  background-color:#2f87cf;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px; /* 按鈕圓角 */
+  border-radius: 5px; 
+  margin: 8px;
+  font-family: '微軟黑體', sans-serif;
 }
 </style>
 

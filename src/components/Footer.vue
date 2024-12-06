@@ -5,16 +5,16 @@
       <li class="unit-item">
         <div class="content">
           <span class="unit-text">指導單位 |</span>
-          <a href="https://www.edu.tw/" target="_blank">
-            <img src="@/assets/MinistryofEducation.png" alt="指導單位">
+          <a :href="educationUrl" target="_blank">
+            <v-img id="Education-img" cover :src="Education" alt="指導單位" ></v-img>
           </a>
         </div>
       </li>
       <li class="unit-item">
         <div class="content">
           <span class="unit-text">執行單位 |</span>
-          <a href="https://ee.stust.edu.tw/" target="_blank">
-            <img src="@/assets/electricalengineering.png" alt="執行單位">
+          <a :href="electricalEngineeringUrl" target="_blank">
+            <v-img id="Electrical-img" cover :src="Electrical" alt="執行單位" ></v-img>
           </a>
         </div>
       </li>
@@ -23,6 +23,18 @@
     <p>&copy;copyright 2018/5/31, 教育部技職教育再造技能躍進設備精進.</p>
   </footer>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import EducationSrc from '@/assets/MinistryofEducation.png';
+import ElectricalSrc from '@/assets/electricalengineering.png';
+const Education=ref(EducationSrc);
+const Electrical=ref(ElectricalSrc);
+
+// 超連結與圖片路徑
+const educationUrl = 'https://www.edu.tw/';
+const electricalEngineeringUrl = 'https://ee.stust.edu.tw/';
+</script>
 
 
 <style scoped>
@@ -67,10 +79,17 @@
   font-family: '微軟黑體', sans-serif;
 }
 
-.content img {
+#Education-img {
   display: block;
-  max-width: 200%; 
+  width:150px;
   height: auto;
+
+}
+#Electrical-img {
+  display: block;
+  width:300px;
+  height: auto;
+
 }
 
 hr {
