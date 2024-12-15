@@ -1,30 +1,36 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+import { createRouter, createWebHistory } from "vue-router";
 
-// import Page1 from '../views/Page1.vue';  //計畫目標
-// import Page2 from '../views/Page2.vue';  //師資培育
-// import Page3 from '../views/Page3.vue';  //學生培育
+import Home from "@/views/HomeView.vue";
 
+import Introduction_Goal from "@/views/Introduction/GoalView.vue"; //計畫目標
+import Introduction_Teacher from "@/views/Introduction/TeacherView.vue"; //師資培育
+import Introduction_Students from "@/views/Introduction/StudentsView.vue"; //學生培育
 
 const routes = [
     {
-      path: '/',
-      name:'Header',
-      component:Header,
+        path: "/",
+        name: "Home",
+        component: Home,
     },
-    {
-      path: '/',
-      name:'Footer',
-      component:Footer,
-      
-    },
-     
-    // { path: '/page1', component: Page1 },
-    // { path: '/page2', component: Page2 },
-    // { path: '/page3', component: Page3 },
-  ];
 
+    {
+        path: "/introduction/goal",
+        name: "Goal",
+        component: Introduction_Goal,
+    },
+
+    {
+        path: "/introduction/teacher",
+        name: "Teacher",
+        component: Introduction_Teacher,
+    },
+
+    {
+        path: "/introduction/students",
+        name: "Students",
+        component: Introduction_Students,
+    },
+];
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),

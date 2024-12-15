@@ -4,11 +4,14 @@
       <a :href="'https://www.stust.edu.tw/'" target="_blank">
         <v-img id="logo" cover :src="logoSrcRef"></v-img>
       </a>
-      <v-btn class="button">會員註冊</v-btn>
-      <v-btn class="button">登入</v-btn>
+      <v-btn class="text-h5 mx-5" size="large" color="#2f87cf">
+        會員註冊
+      </v-btn>
+      <v-btn class="text-h5" size="large" color="#2f87cf">
+        登入
+      </v-btn>
     </div>
   </header>
-
 </template>
 
 
@@ -45,20 +48,6 @@ const logoSrcRef = ref(logoSrc);
 #logo {
   max-height: 100px; 
   width:1000px; 
-}
-
-
-.button {
-  width: 140px;
-  height: 45px;
-  font-size: 25px;
-  background-color:#2f87cf;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px; 
-  margin: 8px;
-  font-family: '微軟黑體', sans-serif;
 }
 </style>
 

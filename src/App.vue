@@ -11,10 +11,15 @@ import Navtable from '@/components/Navtable.vue';
     <Header></Header>
     <Navtable></Navtable>
     <Footer></Footer>
+    <router-view />
   </v-app>
 </template>
 
-
+<style>
+ * {     /* 設定全局字體 */
+    font-family: '微軟黑體', sans-serif;
+  }
+</style>
 
 
 
